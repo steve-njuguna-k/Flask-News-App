@@ -8,7 +8,7 @@ def home():
 
     newsapi = NewsApiClient(api_key= API_KEY)
 
-    top_headlines = newsapi.get_top_headlines(sources= 'techcrunch')
+    top_headlines = newsapi.get_top_headlines(sources= 'techcrunch, the-verge, gizmodo, the-next-web, techradar, recode, ars-technica')
 
     all_articles = top_headlines['articles']
 
@@ -19,7 +19,7 @@ def home():
     p_date = []
     url = []
 
-    for i in range(len(all_articles[0:1])):
+    for i in range(len(all_articles)):
         main_article = all_articles[i]
 
         title.append(main_article['title'])
