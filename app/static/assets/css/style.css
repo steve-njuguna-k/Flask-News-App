@@ -6,6 +6,14 @@ p{
     font-size: 14px;
 }
 
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
 .landing {
     margin-top: 70px;
 }
@@ -54,7 +62,12 @@ h2 {
 }
 
 .img {
-    border-radius: 20px;
+    width: 100%;
+}
+
+.image-fluid {
+    border-radius: 10px;
+    height: 18em;
 }
 
 .card-title {
@@ -69,6 +82,7 @@ h2 {
 
 .article-body {
     margin-bottom: 30px;
+    height: 550px;
 }
 
 .footer {
