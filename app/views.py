@@ -19,7 +19,7 @@ def home():
     p_date = []
     url = []
 
-    for i in range(len(all_articles)):
+    for i in range(len(all_articles[0:1])):
         main_article = all_articles[i]
 
         title.append(main_article['title'])
