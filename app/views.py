@@ -29,6 +29,6 @@ def home():
         p_date.append(main_article['publishedAt'])
         url.append(main_article['url'])
 
-        content = zip(title, desc, author, img, p_date, url)
+        contents = zip(title, desc, author, img, p_date, url)
 
-    return  render_template('home.html', content = content)
+    return  render_template('home.html', content = contents)
