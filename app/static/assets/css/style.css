@@ -1,3 +1,72 @@
-.body{
-    background-color: #000;
+* {
+    color: #000;
+}
+
+p{
+    font-size: 14px;
+}
+
+.landing {
+    margin-top: 70px;
+}
+
+.navbar.navbar-dark .nav-item .nav-link { 
+    color: #000!important; 
+} 
+
+.navbar.navbar-dark .nav-item .nav-link:hover { 
+    color: #000!important; 
+}
+
+.navbar {
+    background-color: #fff;
+}
+
+h1 {
+    font-size: 33px;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+.author {
+    font-size: 12px;
+}
+
+.date {
+    font-size: 12px;
+}
+
+.article-card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    color: #000;
+    background-color: #fff;
+    word-wrap: break-word;
+    background-clip: border-box;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.img {
+    border-radius: 20px;
+}
+
+.card-title {
+    margin-top: 15px;
+}
+
+.cardfooter {
+    padding: 0.75rem 1.25rem;
+    padding-bottom: 0px;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.footer {
+    margin-top: 250px;
 }
