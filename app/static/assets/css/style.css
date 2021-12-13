@@ -72,7 +72,6 @@ h2 {
 }
 
 .card-title {
-    margin-top: 15px;
     color: #ff4a00;
 }
 
@@ -89,4 +88,11 @@ h2 {
 
 .article-name{
     color: #ff4a00;
+}
+
+.source {
+    margin-top: 5px;
+    padding-top: 5px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
 }
