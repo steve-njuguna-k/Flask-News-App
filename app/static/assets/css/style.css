@@ -1,5 +1,7 @@
 * {
     font-family:'Overpass', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1e1e21;
+    color: #fff;
 }
 
 p{
@@ -8,34 +10,56 @@ p{
 
 a {
     text-decoration: none;
+    color: #fff;
 }
 
 a:hover {
     text-decoration: none;
+    color: #fff;
 }
 
 .landing {
     margin-top: 70px;
 }
 
+#navbarToggle {
+    background-color: #000;
+}
+
 .navbar.navbar-dark .nav-item .nav-link { 
-    color: #000!important; 
+    color: #fff!important; 
+    background-color: #000;
 } 
 
 .navbar.navbar-dark .nav-item .nav-link:hover { 
-    color: #000!important; 
+    color: #fff!important; 
+    background-color: #000;
 }
 
 .navbar {
-    background-color: #fff;
+    background-color: #000!important;
+}
+
+.navbar-nav {
+    background-color: #000;
+}
+
+.navbar-brand {
+    background-color: #000;
+}
+
+.lg {
+    background-color: #000;
 }
 
 h1 {
     font-size: 33px;
+    color: #dfdcd9;
 }
 
 h2 {
     font-size: 1.5em;
+    color: #dfdcd9;
 }
 
 .author {
@@ -70,19 +94,19 @@ h2 {
     height: 18em;
 }
 
-.card-title {
-    color: #000;
-}
-
 .cardfooter {
     padding: 0.75rem 1.25rem;
     padding-bottom: 0px;
     border-radius: 0px 0px 10px 10px;
 }
 
+.article_name {
+    color: #dfdcd9;
+}
+
 .article-body {
     margin-bottom: 30px;
-    height: 550px;
+    height: 600px;
 }
 
 .source {
@@ -90,4 +114,18 @@ h2 {
     padding-top: 5px;
     padding-bottom: 0px;
     margin-bottom: 0px;
+    color: #dd0000;
+}
+
+.logo {
+    color: #dd0000;
+    background-color: #000;
+}
+
+.svg {
+    background-color: #000;
+}
+
+.footer {
+    background-color: #1e1e21;
 }
