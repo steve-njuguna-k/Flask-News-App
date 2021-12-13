@@ -10,8 +10,7 @@ def allSources():
 
     source_result.append(sources)
 
-    for source in source_result:
-        print(source.status)
+    print(source_result[0])
     
     return source_result
 

@@ -106,7 +106,11 @@ h2 {
 
 .article-body {
     margin-bottom: 30px;
-    height: 600px;
+    height: 650px;
+}
+
+.source-body {
+    margin-bottom: 30px;
 }
 
 .source {
