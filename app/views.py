@@ -1,12 +1,12 @@
 from app import app
 from flask import render_template
 from newsapi import NewsApiClient
-from .config import API_KEY
+from .config import Config
 
 @app.route('/')
 def home():
 
-    newsapi = NewsApiClient(api_key= API_KEY)
+    newsapi = NewsApiClient(api_key= Config.API_KEY)
 
     top_headlines = newsapi.get_top_headlines(sources= 'techcrunch, the-verge, gizmodo, the-next-web, techradar, recode, ars-technica')
 

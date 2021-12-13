@@ -73,6 +73,7 @@ h2 {
 
 .card-title {
     margin-top: 15px;
+    color: #ff4a00;
 }
 
 .cardfooter {
@@ -84,4 +85,8 @@ h2 {
 .article-body {
     margin-bottom: 30px;
     height: 550px;
+}
+
+.article-name{
+    color: #ff4a00;
 }
