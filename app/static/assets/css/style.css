@@ -129,3 +129,11 @@ h2 {
 .footer {
     background-color: #1e1e21;
 }
+
+.dropdown-menu {
+    background-color: #1e1e21;
+}
+
+.dropdown-item {
+    color: #fff;
+}
