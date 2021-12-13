@@ -2,6 +2,7 @@ from .models import Articles
 from .models import Sources
 from newsapi import NewsApiClient
 from .config import Config
+import urllib.request,json
 
 api_key=None
 base_url=None
@@ -50,7 +51,7 @@ def topHeadlines():
 
     top_headlines = newsapi.get_top_headlines(sources= 'cnn, reuters, cnbc, techcrunch, the-verge, gizmodo, the-next-web, techradar, recode, ars-technica')
 
-    all_articles = top_headlines['articles']
+    all_headlines = top_headlines['articles']
 
     articles_results = []
 
@@ -62,16 +63,16 @@ def topHeadlines():
     p_date = []
     url = []
 
-    for i in range(len(all_articles)):
-        main_article = all_articles[i]
+    for i in range(len(all_headlines)):
+        headline = all_headlines[i]
 
-        source.append(main_article['source'])
-        title.append(main_article['title'])
-        desc.append(main_article['description'])
-        author.append(main_article['author'])
-        img.append(main_article['urlToImage'])
-        p_date.append(main_article['publishedAt'])
-        url.append(main_article['url'])
+        source.append(headline['source'])
+        title.append(headline['title'])
+        desc.append(headline['description'])
+        author.append(headline['author'])
+        img.append(headline['urlToImage'])
+        p_date.append(headline['publishedAt'])
+        url.append(headline['url'])
 
         article_object = Articles(source, title, desc, author, img, p_date, url)
 
@@ -112,6 +113,42 @@ def randomArticles():
         article_object = Articles(source, title, desc, author, img, p_date, url)
 
         articles_results.append(article_object)
+
+        contents = zip(source, title, desc, author, img, p_date, url)
+
+    return  contents
+
+def businessArticles():
+    newsapi = NewsApiClient(api_key= Config.API_KEY)
+
+    business_articles = newsapi.get_top_headlines(category='business')
+
+    all_articles = business_articles['articles']
+
+    business_articles_results = []
+
+    source = []
+    title = []
+    desc = []
+    author = []
+    img = []
+    p_date = []
+    url = []
+
+    for i in range(len(all_articles)):
+        main_article = all_articles[i]
+
+        source.append(main_article['source'])
+        title.append(main_article['title'])
+        desc.append(main_article['description'])
+        author.append(main_article['author'])
+        img.append(main_article['urlToImage'])
+        p_date.append(main_article['publishedAt'])
+        url.append(main_article['url'])
+
+        article_object = Articles(source, title, desc, author, img, p_date, url)
+
+        business_articles_results.append(article_object)
 
         contents = zip(source, title, desc, author, img, p_date, url)
 
