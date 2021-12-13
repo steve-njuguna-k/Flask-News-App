@@ -1,6 +1,6 @@
 from app import app
 from flask import render_template
-from .request import businessArticles, publishedArticles, randomArticles, topHeadlines
+from .request import businessArticles, publishedArticles, randomArticles, techArticles, topHeadlines
 
 @app.route('/')
 def home():
@@ -25,3 +25,9 @@ def business():
     sources = businessArticles()
 
     return  render_template('business.html', sources = sources)
+
+@app.route('/category/tech')
+def tech():
+    sources = techArticles()
+
+    return  render_template('tech.html', sources = sources)

@@ -28,15 +28,15 @@ def publishedArticles():
     url = []
 
     for i in range(len(all_articles)):
-        main_article = all_articles[i]
+        article = all_articles[i]
 
-        source.append(main_article['source'])
-        title.append(main_article['title'])
-        desc.append(main_article['description'])
-        author.append(main_article['author'])
-        img.append(main_article['urlToImage'])
-        p_date.append(main_article['publishedAt'])
-        url.append(main_article['url'])
+        source.append(article['source'])
+        title.append(article['title'])
+        desc.append(article['description'])
+        author.append(article['author'])
+        img.append(article['urlToImage'])
+        p_date.append(article['publishedAt'])
+        url.append(article['url'])
 
         article_object = Articles(source, title, desc, author, img, p_date, url)
 
@@ -100,15 +100,15 @@ def randomArticles():
     url = []
 
     for i in range(len(all_articles)):
-        main_article = all_articles[i]
+        article = all_articles[i]
 
-        source.append(main_article['source'])
-        title.append(main_article['title'])
-        desc.append(main_article['description'])
-        author.append(main_article['author'])
-        img.append(main_article['urlToImage'])
-        p_date.append(main_article['publishedAt'])
-        url.append(main_article['url'])
+        source.append(article['source'])
+        title.append(article['title'])
+        desc.append(article['description'])
+        author.append(article['author'])
+        img.append(article['urlToImage'])
+        p_date.append(article['publishedAt'])
+        url.append(article['url'])
 
         article_object = Articles(source, title, desc, author, img, p_date, url)
 
@@ -136,19 +136,55 @@ def businessArticles():
     url = []
 
     for i in range(len(all_articles)):
-        main_article = all_articles[i]
+        article = all_articles[i]
 
-        source.append(main_article['source'])
-        title.append(main_article['title'])
-        desc.append(main_article['description'])
-        author.append(main_article['author'])
-        img.append(main_article['urlToImage'])
-        p_date.append(main_article['publishedAt'])
-        url.append(main_article['url'])
+        source.append(article['source'])
+        title.append(article['title'])
+        desc.append(article['description'])
+        author.append(article['author'])
+        img.append(article['urlToImage'])
+        p_date.append(article['publishedAt'])
+        url.append(article['url'])
 
         article_object = Articles(source, title, desc, author, img, p_date, url)
 
         business_articles_results.append(article_object)
+
+        contents = zip(source, title, desc, author, img, p_date, url)
+
+    return  contents
+
+def techArticles():
+    newsapi = NewsApiClient(api_key= Config.API_KEY)
+
+    tech_articles = newsapi.get_top_headlines(category='technology')
+
+    all_articles = tech_articles['articles']
+
+    tech_articles_results = []
+
+    source = []
+    title = []
+    desc = []
+    author = []
+    img = []
+    p_date = []
+    url = []
+
+    for i in range(len(all_articles)):
+        article = all_articles[i]
+
+        source.append(article['source'])
+        title.append(article['title'])
+        desc.append(article['description'])
+        author.append(article['author'])
+        img.append(article['urlToImage'])
+        p_date.append(article['publishedAt'])
+        url.append(article['url'])
+
+        article_object = Articles(source, title, desc, author, img, p_date, url)
+
+        tech_articles_results.append(article_object)
 
         contents = zip(source, title, desc, author, img, p_date, url)
 
