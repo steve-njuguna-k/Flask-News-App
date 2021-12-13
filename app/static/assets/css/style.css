@@ -1,5 +1,4 @@
 * {
-    color: #000;
     font-family:'Overpass', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -72,7 +71,7 @@ h2 {
 }
 
 .card-title {
-    color: #ff4a00;
+    color: #000;
 }
 
 .cardfooter {
@@ -84,10 +83,6 @@ h2 {
 .article-body {
     margin-bottom: 30px;
     height: 550px;
-}
-
-.article-name{
-    color: #ff4a00;
 }
 
 .source {
