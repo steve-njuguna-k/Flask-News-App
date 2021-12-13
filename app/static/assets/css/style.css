@@ -127,7 +127,14 @@ h2 {
 }
 
 .footer {
-    background-color: #1e1e21;
+    background-color: #000;
+    padding-top: 20px;
+    padding-bottom: 15px;
+}
+
+.footer-text {
+    background-color: #000;
+    margin-bottom: 0px;
 }
 
 .dropdown-menu {
@@ -136,4 +143,9 @@ h2 {
 
 .dropdown-item {
     color: #fff;
+}
+
+.dropdown-item:hover {
+    color: #fff;
+    background-color: #26262a;
 }
