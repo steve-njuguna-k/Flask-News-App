@@ -12,9 +12,9 @@ base_source_list=None
 def publishedArticles():
     newsapi = NewsApiClient(api_key= Config.API_KEY)
 
-    top_headlines = newsapi.get_top_headlines(sources= 'cnn, bbc-news, nbc-news, reuters, cnbc, techcrunch, the-verge, gizmodo, the-next-web, techradar, recode, ars-technica')
+    get_articles = newsapi.get_everything(sources= 'cnn, reuters, cnbc, techcrunch, the-verge, gizmodo, the-next-web, techradar, recode, ars-technica')
 
-    all_articles = top_headlines['articles']
+    all_articles = get_articles['articles']
 
     articles_results = []
 
