@@ -189,3 +189,75 @@ def techArticles():
         contents = zip(source, title, desc, author, img, p_date, url)
 
     return  contents
+
+def entArticles():
+    newsapi = NewsApiClient(api_key= Config.API_KEY)
+
+    ent_articles = newsapi.get_top_headlines(category='entertainment')
+
+    all_articles = ent_articles['articles']
+
+    ent_articles_results = []
+
+    source = []
+    title = []
+    desc = []
+    author = []
+    img = []
+    p_date = []
+    url = []
+
+    for i in range(len(all_articles)):
+        article = all_articles[i]
+
+        source.append(article['source'])
+        title.append(article['title'])
+        desc.append(article['description'])
+        author.append(article['author'])
+        img.append(article['urlToImage'])
+        p_date.append(article['publishedAt'])
+        url.append(article['url'])
+
+        article_object = Articles(source, title, desc, author, img, p_date, url)
+
+        ent_articles_results.append(article_object)
+
+        contents = zip(source, title, desc, author, img, p_date, url)
+
+    return  contents
+
+def scienceArticles():
+    newsapi = NewsApiClient(api_key= Config.API_KEY)
+
+    science_articles = newsapi.get_top_headlines(category='science')
+
+    all_articles = science_articles['articles']
+
+    science_articles_results = []
+
+    source = []
+    title = []
+    desc = []
+    author = []
+    img = []
+    p_date = []
+    url = []
+
+    for i in range(len(all_articles)):
+        article = all_articles[i]
+
+        source.append(article['source'])
+        title.append(article['title'])
+        desc.append(article['description'])
+        author.append(article['author'])
+        img.append(article['urlToImage'])
+        p_date.append(article['publishedAt'])
+        url.append(article['url'])
+
+        article_object = Articles(source, title, desc, author, img, p_date, url)
+
+        science_articles_results.append(article_object)
+
+        contents = zip(source, title, desc, author, img, p_date, url)
+
+    return  contents
