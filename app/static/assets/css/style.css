@@ -90,7 +90,6 @@ h2 {
 }
 
 .image-fluid {
-    border-radius: 10px;
     height: 18em;
 }
 
@@ -130,6 +129,10 @@ h2 {
     background-color: #000;
 }
 
+.p-svg {
+    background-color: #26262a;
+}
+
 .footer {
     background-color: #000;
     padding-top: 20px;
@@ -151,5 +154,13 @@ h2 {
 
 .dropdown-item:hover {
     color: #fff;
+    background-color: #26262a;
+}
+
+.published {
+    background-color: #26262a;
+}
+
+.card-footer {
     background-color: #26262a;
 }
