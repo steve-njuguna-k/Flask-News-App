@@ -338,7 +338,7 @@ def get_news_source():
   '''
   Function that gets the json response to our url request
   '''
-  get_news_source_url = 'https://newsapi.org/v2/sources?apiKey=d56bc62864054634bf08615054f1cdb7'
+  get_news_source_url = 'https://newsapi.org/v2/sources?apiKey=' + Config.API_KEY
   with urllib.request.urlopen(get_news_source_url) as url:
     get_news_source_data = url.read()
     get_news_source_response = json.loads(get_news_source_data)
@@ -361,7 +361,7 @@ def process_sources(source_list):
     description = news_source_item.get('description')
     url = news_source_item.get('url')
 
-    if id:
+    if name:
       news_source_object = Sources(name, description,url)
       news_source_result.append(news_source_object)
   return news_source_result
