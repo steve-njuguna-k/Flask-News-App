@@ -29,7 +29,11 @@ https://github.com/steve-njuguna-k/Flask-News-App.git
 ```
 cd Flask-News-App
 ```
-3. Open CMD & execute main.py
+3. Open CMD & Install Dependancies
+```
+pip install -r requirements.txt
+```
+4. Execute main.py
 ```
 main.py
 ```
