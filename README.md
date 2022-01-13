@@ -29,11 +29,19 @@ https://github.com/steve-njuguna-k/Flask-News-App.git
 ```
 cd Flask-News-App
 ```
-3. Open CMD & Install Dependancies
+3. create a virtual env
+```
+py -m venv env
+```
+4. activate env
+```
+env\scripts\activate
+```
+5. Open CMD & Install Dependancies
 ```
 pip install -r requirements.txt
 ```
-4. Execute main.py
+6. Execute main.py
 ```
 main.py
 ```
