@@ -31,43 +31,8 @@ def sources():
     return render_template('sources.html', newsSource=newsSource)
 
 
-@app.route('/category/business')
-def business():
-    sources = topHeadlines('business')
+@app.route('/category/<tag>')
+def business(tag):
+    sources = topHeadlines(tag)
 
-    return render_template('business.html', sources=sources)
-
-
-@app.route('/category/tech')
-def tech():
-    sources = topHeadlines('tech')
-
-    return render_template('tech.html', sources=sources)
-
-
-@app.route('/category/entertainment')
-def entertainment():
-    sources = topHeadlines('entertainment')
-
-    return render_template('entertainment.html', sources=sources)
-
-
-@app.route('/category/science')
-def science():
-    sources = topHeadlines('science')
-
-    return render_template('science.html', sources=sources)
-
-
-@app.route('/category/sports')
-def sports():
-    sources = topHeadlines('sport')
-
-    return render_template('sport.html', sources=sources)
-
-
-@app.route('/category/health')
-def health():
-    sources = topHeadlines('health')
-
-    return render_template('health.html', sources=sources)
+    return render_template('category.html', sources=sources)
