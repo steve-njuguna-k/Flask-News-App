@@ -14,16 +14,16 @@ base_url_top_headlines = None
 base_source_list = None
 
 
-def generate_article_templates(number):
+def generate_article_templates(number, tag=None):
     all_articles = []
     for x in range(1, number+1):
-        all_articles.append({'source': f'source-{x}',
-                             'title': f'title-{x}',
-                             'description': f'description-{x}',
-                             'author': f'author-{x}',
-                             'urlToImage': f'urlToImage-{x}',
-                             'publishedAt': f'publishedAt-{x}',
-                             'url': f'url-{x}'})
+        all_articles.append({'source': f'source-{tag}{x}',
+                             'title': f'title-{tag}{x}',
+                             'description': f'description-{tag}{x}',
+                             'author': f'author-{tag}{x}',
+                             'urlToImage': f'urlToImage-{tag}{x}',
+                             'publishedAt': f'publishedAt-{tag}{x}',
+                             'url': f'url-{tag}{x}'})
     return all_articles
 
 
@@ -60,14 +60,22 @@ def publishedArticles():
     return zip_content(all_articles)
 
 
-def topHeadlines():
+def topHeadlines(tag=None):
     # newsapi = NewsApiClient(api_key=Config.API_KEY)
     #
-    # top_headlines = newsapi.get_top_headlines(
-    #     sources='cnn, reuters, cnbc, techcrunch, the-verge, gizmodo, the-next-web, techradar, recode, ars-technica')
+    # if tag:
+    #     articles = newsapi.get_top_headlines(category=tag)
+    # else:
+    #     top_headlines = newsapi.get_top_headlines(
+    #         sources='cnn, reuters, cnbc, techcrunch, the-verge, gizmodo, the-next-web, techradar, recode, ars-technica')
     #
-    # all_headlines = top_headlines['articles']
-    all_headlines = generate_article_templates(10)
+    # all_articles = articles['articles']
+    # return zip_content(all_headlines)
+
+    if tag:
+        all_headlines = generate_article_templates(10, tag)
+    else:
+        all_headlines = generate_article_templates(10)
 
     return zip_content(all_headlines)
 
@@ -78,72 +86,6 @@ def randomArticles():
     # random_articles = newsapi.get_everything(sources='the-verge, gizmodo, the-next-web, recode, ars-technica')
     #
     # all_articles = random_articles['articles']
-    all_articles = generate_article_templates(10)
-
-    return zip_content(all_articles)
-
-
-def businessArticles():
-    # newsapi = NewsApiClient(api_key=Config.API_KEY)
-    #
-    # business_articles = newsapi.get_top_headlines(category='business')
-    #
-    # all_articles = business_articles['articles']
-    all_articles = generate_article_templates(10)
-
-    return zip_content(all_articles)
-
-
-def techArticles():
-    # newsapi = NewsApiClient(api_key=Config.API_KEY)
-    #
-    # tech_articles = newsapi.get_top_headlines(category='technology')
-    #
-    # all_articles = tech_articles['articles']
-    all_articles = generate_article_templates(10)
-
-    return zip_content(all_articles)
-
-
-def entArticles():
-    # newsapi = NewsApiClient(api_key=Config.API_KEY)
-    #
-    # ent_articles = newsapi.get_top_headlines(category='entertainment')
-    #
-    # all_articles = ent_articles['articles']
-    all_articles = generate_article_templates(10)
-
-    return zip_content(all_articles)
-
-
-def scienceArticles():
-    # newsapi = NewsApiClient(api_key=Config.API_KEY)
-    #
-    # science_articles = newsapi.get_top_headlines(category='science')
-    #
-    # all_articles = science_articles['articles']
-    all_articles = generate_article_templates(10)
-
-    return zip_content(all_articles)
-
-
-def sportArticles():
-    # newsapi = NewsApiClient(api_key=Config.API_KEY)
-    #
-    # sport_articles = newsapi.get_top_headlines(category='sports')
-    #
-    # all_articles = sport_articles['articles']
-    all_articles = generate_article_templates(10)
-
-    return zip_content(all_articles)
-
-
-def healthArticles():
-    # newsapi = NewsApiClient(api_key=Config.API_KEY)
-    #
-    # health_articles = newsapi.get_top_headlines(category='health')
-    #
-    # all_articles = health_articles['articles']
     all_articles = generate_article_templates(10)
 
     return zip_content(all_articles)
