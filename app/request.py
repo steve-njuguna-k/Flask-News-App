@@ -1,7 +1,7 @@
 import json
 import urllib.request
 
-# from newsapi import NewsApiClient
+from newsapi.newsapi_client import NewsApiClient
 
 from .config import Config
 from .models import Articles
@@ -12,19 +12,6 @@ base_url = None
 base_url_for_everything = None
 base_url_top_headlines = None
 base_source_list = None
-
-
-def generate_article_templates(number, tag=None):
-    all_articles = []
-    for x in range(1, number+1):
-        all_articles.append({'source': f'source-{tag}{x}',
-                             'title': f'title-{tag}{x}',
-                             'description': f'description-{tag}{x}',
-                             'author': f'author-{tag}{x}',
-                             'urlToImage': f'urlToImage-{tag}{x}',
-                             'publishedAt': f'publishedAt-{tag}{x}',
-                             'url': f'url-{tag}{x}'})
-    return all_articles
 
 
 def zip_content(articles):
@@ -49,44 +36,36 @@ def zip_content(articles):
 
 
 def publishedArticles():
-    # newsapi = NewsApiClient(api_key=Config.API_KEY)
-    #
-    # get_articles = newsapi.get_everything(
-    #     sources='cnn, reuters, cnbc, the-verge, gizmodo, the-next-web, techradar, recode, ars-technica')
-    #
-    # all_articles = get_articles['articles']
-    all_articles = generate_article_templates(10)
+    newsapi = NewsApiClient(api_key=Config.API_KEY)
+
+    get_articles = newsapi.get_everything(
+        sources='cnn, reuters, cnbc, the-verge, gizmodo, the-next-web, techradar, recode, ars-technica')
+
+    all_articles = get_articles['articles']
 
     return zip_content(all_articles)
 
 
 def topHeadlines(tag=None):
-    # newsapi = NewsApiClient(api_key=Config.API_KEY)
-    #
-    # if tag:
-    #     articles = newsapi.get_top_headlines(category=tag)
-    # else:
-    #     top_headlines = newsapi.get_top_headlines(
-    #         sources='cnn, reuters, cnbc, techcrunch, the-verge, gizmodo, the-next-web, techradar, recode, ars-technica')
-    #
-    # all_articles = articles['articles']
-    # return zip_content(all_headlines)
+    newsapi = NewsApiClient(api_key=Config.API_KEY)
 
     if tag:
-        all_headlines = generate_article_templates(10, tag)
+        top_headlines = newsapi.get_top_headlines(category=tag)
     else:
-        all_headlines = generate_article_templates(10)
+        top_headlines = newsapi.get_top_headlines(
+            sources='cnn, reuters, cnbc, techcrunch, the-verge, gizmodo, the-next-web, techradar, recode, ars-technica')
 
+    all_headlines = top_headlines['articles']
     return zip_content(all_headlines)
 
 
+
 def randomArticles():
-    # newsapi = NewsApiClient(api_key=Config.API_KEY)
-    #
-    # random_articles = newsapi.get_everything(sources='the-verge, gizmodo, the-next-web, recode, ars-technica')
-    #
-    # all_articles = random_articles['articles']
-    all_articles = generate_article_templates(10)
+    newsapi = NewsApiClient(api_key=Config.API_KEY)
+
+    random_articles = newsapi.get_everything(sources='the-verge, gizmodo, the-next-web, recode, ars-technica')
+
+    all_articles = random_articles['articles']
 
     return zip_content(all_articles)
 
